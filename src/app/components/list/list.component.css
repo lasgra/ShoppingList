@@ -1,0 +1,33 @@
+.body {
+    width: 80%;
+    margin-left: 5%;
+    padding-top: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header>img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header>span {
+    font-size: 35px;
+    text-align: center;
+}
+
+li {
+    margin-top: 2%;
+    margin-left: calc(3% + 40px);
+    font-size: 23px;
+    list-style-type: none;
+}
+
+li:hover {
+    color: #48b0e0;
+    user-select: none;
+    cursor: pointer;
+}

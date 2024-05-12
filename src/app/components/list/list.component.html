@@ -1,0 +1,9 @@
+<div class="body">
+    <div class="header">
+        <img src="{{list.imageUrl}}">
+        <span>{{list.name}}</span>
+    </div>
+    <ul *ngFor="let entry of list.entries">
+        <li>{{entry}}</li>
+    </ul>
+</div>
