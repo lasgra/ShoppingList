@@ -1,0 +1,136 @@
+.body {
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(146, 146, 146);
+    border-radius: 10px;
+}
+
+.content {
+    width: 100%;
+    height: 400px;
+    z-index: 2;
+    border-radius: 10px;
+    background-color: rgb(146, 146, 146);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.content>* {
+    width: 100%;
+}
+
+.input {
+    margin-left: 25px;
+}
+
+.monkey {
+    height: 200px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-image: url("../../assets/monkey.png");
+    position: relative;
+}
+
+.leftArm,
+.rightArm {
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    top: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+}
+
+.leftEye,
+.rightEye {
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    position: absolute;
+    top: 100px;
+    background-color: white;
+}
+
+.rightEye {
+    left: 228px;
+}
+
+.leftEye {
+    left: 163px;
+}
+
+.leftArm {
+    background-image: url("../../assets/left.png");
+    transform: rotate(45deg);
+    left: 80px;
+}
+
+.rightArm {
+    background-image: url("../../assets/right.png");
+    transform: rotate(-45deg);
+    left: -80px;
+}
+
+.moveLeft {
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+
+.moveRight {
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+
+
+.divider {
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right, transparent, black, transparent);
+    position: absolute;
+    z-index: 3;
+}
+
+.name {
+    display: block;
+    text-align: center;
+}
+
+input {
+    width: 346px;
+    font-size: 24px;
+    font-family: monospace;
+}
+
+.button {
+    text-align: center;
+    margin-left: 100px;
+    width: 200px !important;
+    height: 50px;
+    background-color: rgb(92, 92, 92);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+    cursor: pointer;
+}
+
+.changeType {
+    width: 400px !important;
+    font-size: 100%;
+    text-align: center;
+
+}

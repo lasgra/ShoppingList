@@ -1,0 +1,3 @@
+*:not(app-login) {
+    filter: blur(2px);
+}

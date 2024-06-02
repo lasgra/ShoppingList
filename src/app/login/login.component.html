@@ -1,0 +1,22 @@
+<div class="body">
+    <div class="monkey">
+        <div #leftEye class="leftEye"></div>
+        <div #rightEye class="rightEye"></div>
+        <div #leftArm class="leftArm"></div>
+        <div #rightArm class="rightArm"></div>
+    </div>
+    <div class="divider"></div>
+    <div class="content">
+        <span class="name">Login</span>
+        <div class="input">
+            <div>Email</div>
+            <input #email type="text" (input)="onInput(email.value)">
+        </div>
+        <div class="input">
+            <div>Password</div>
+            <input type="password" (focus)="onFocus()" (focusout)="onFocusOut()">
+        </div>
+        <div class="button">Press to login</div>
+        <div class="changeType">Don't have an account?</div>
+    </div>
+</div>
