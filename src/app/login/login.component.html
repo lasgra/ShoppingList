@@ -1,22 +1,55 @@
-<div class="body">
-    <div class="monkey">
-        <div #leftEye class="leftEye"></div>
-        <div #rightEye class="rightEye"></div>
-        <div #leftArm class="leftArm"></div>
-        <div #rightArm class="rightArm"></div>
-    </div>
+<div #monkey class="monkey">
+    <div #leftEye class="leftEye"></div>
+    <div #rightEye class="rightEye"></div>
+    <div #leftArm class="leftArm"></div>
+    <div #rightArm class="rightArm"></div>
+</div>
+
+<div #login style="z-index: 1;" class="body">
     <div class="divider"></div>
     <div class="content">
         <span class="name">Login</span>
         <div class="input">
             <div>Email</div>
-            <input #email type="text" (input)="onInput(email.value)">
+            <input #emailLogin type="text" (input)="onInput(emailLogin.value)" (focusout)="onFocusOut()">
         </div>
         <div class="input">
             <div>Password</div>
-            <input type="password" (focus)="onFocus()" (focusout)="onFocusOut()">
+            <input #passwordLogin type="password" (focus)="onFocus()" (focusout)="onFocusOut()">
         </div>
-        <div class="button">Press to login</div>
-        <div class="changeType">Don't have an account?</div>
+        <div #loginCorrection class="correction center"></div>
+        <div class="button" (click)="loginAccount(emailLogin.value, passwordLogin.value)">Click to login</div>
+        <div class="changeType" (click)="changeType()">Don't have an account?</div>
+    </div>
+</div>
+
+<div #register style="z-index: -2;" class="body">
+    <div class="divider"></div>
+    <div class="content">
+        <span class="name">Register</span>
+        <div class="input">
+            <div>Email</div>
+            <div #registerEmailCorrection class="correction"></div>
+            <input #emailRegister type="text" (input)="onInput(emailRegister.value)" (focusout)="onFocusOut()">
+        </div>
+        <div class="input">
+            <div>Password</div>
+            <div #registerPasswordCorrection class="correction"></div>
+            <input #passwordRegister type="password" (focus)="onFocus()" (focusout)="onFocusOut()"
+                (input)="passwordInput(passwordRegister.value)">
+            <div class="passwordMeter">
+                <div #firstBar class="firstBar"></div>
+                <div #secondBar class="secondBar"></div>
+                <div #thirdBar class="thirdBar"></div>
+                <div #fourthBar class="fourthBar"></div>
+            </div>
+        </div>
+        <div class="input">
+            <div>Confirm password</div>
+            <div #registerPasswordConfirmCorrection class="correction"></div>
+            <input #confirmPasswordRegister type="password" (focus)="onFocus()" (focusout)="onFocusOut()">
+        </div>
+        <div class="button"(click)="registerAccount(emailRegister.value, passwordRegister.value, confirmPasswordRegister.value)">Click to register</div>
+        <div class="changeType" (click)="changeType()">Already have an account?</div>
     </div>
 </div>

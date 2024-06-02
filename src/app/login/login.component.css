@@ -1,12 +1,13 @@
 .body {
+    margin-top: 200px;
     width: 400px;
-    height: 600px;
+    height: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(146, 146, 146);
-    border-radius: 10px;
+    transform: translate(-50%, -75%);
+    background-color: #d2e3eb;
+    border-radius: 0 0 10px 10px;
 }
 
 .content {
@@ -14,15 +15,11 @@
     height: 400px;
     z-index: 2;
     border-radius: 10px;
-    background-color: rgb(146, 146, 146);
+    background-color: #d2e3eb;
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
-
-.content>* {
-    width: 100%;
 }
 
 .input {
@@ -31,12 +28,18 @@
 
 .monkey {
     height: 200px;
-    width: 100%;
+    width: 400px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: center;
     background-image: url("../../assets/monkey.png");
-    position: relative;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%, -75%);
+    background-color: #d2e3eb;
+    border-radius: 10px 10px 0 0;
 }
 
 .leftArm,
@@ -98,7 +101,7 @@
 .divider {
     width: 100%;
     height: 5px;
-    background-image: linear-gradient(to right, transparent, black, transparent);
+    background-image: linear-gradient(to right, transparent, #bed6e1, transparent);
     position: absolute;
     z-index: 3;
 }
@@ -109,17 +112,39 @@
 }
 
 input {
+    height: 36px;
     width: 346px;
     font-size: 24px;
     font-family: monospace;
+    outline: none;
+    border: none;
+}
+
+.passwordMeter {
+    width: 346px;
+    height: 4px;
+    background-color: black;
+    display: flex;
+}
+
+.passwordMeter>* {
+    height: 4px;
+    width: calc(25% - 3px);
+    background-color: rgb(92, 92, 92);
+    border-right: black 3px solid;
+}
+
+.fourthBar {
+    border-right: none !important;
+    width: 25% !important;
 }
 
 .button {
     text-align: center;
     margin-left: 100px;
-    width: 200px !important;
+    width: 200px;
     height: 50px;
-    background-color: rgb(92, 92, 92);
+    background-color: #bed6e1;
     border-radius: 25px;
     display: flex;
     justify-content: center;
@@ -128,9 +153,38 @@ input {
     cursor: pointer;
 }
 
-.changeType {
-    width: 400px !important;
-    font-size: 100%;
-    text-align: center;
+.correction{
+    font-size: 60%;
+    color: red;
+}
 
+.center{
+    width: 100%;
+    text-align: center;
+}
+
+.changeType {
+    width: 400px;
+    font-size: 90%;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.spin {
+    animation: spinAnim 1s 1 forwards ease-in-out;
+}
+
+@keyframes spinAnim {
+    0% {
+        transform: translate(-50%, -75%) rotateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -75%) rotateY(90deg);
+    }
+
+    100% {
+        transform: translate(-50%, -75%) rotateY(0deg);
+    }
 }
