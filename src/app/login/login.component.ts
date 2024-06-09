@@ -28,6 +28,13 @@ export class LoginComponent {
   @ViewChild("loginCorrection") loginCorrection: ElementRef
 
   emailValidatior = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+  mainParts : ElementRef<any>[]
+
+  ngOnInit(){
+    setTimeout(() => {
+      this.mainParts = [this.loginInput, this.registerInput, this.monkey]
+    }, 2);
+  }
 
   onFocus() {
     this.leftArm.nativeElement.classList.add("moveLeft")
@@ -129,5 +136,23 @@ export class LoginComponent {
     setTimeout(() => {
       this.loginCorrection.nativeElement.innerText = ""
     }, 1500);
+  }
+
+  hide(){
+    this.mainParts.forEach(part => {
+      part.nativeElement.classList.add("hide")
+    });
+    setTimeout(() => {
+      this.mainParts.forEach(part => {
+        part.nativeElement.classList.remove("hide")
+        part.nativeElement.classList.remove("appear")
+      });
+    }, 1000);
+  }
+
+  appear(){
+    this.mainParts.forEach(part => {
+      part.nativeElement.classList.add("appear")
+    });
   }
 }

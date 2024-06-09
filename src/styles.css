@@ -6,3 +6,7 @@
     font-family: "Ubuntu Sans";
     font-size: 105%;
 }
+
+body{
+    overflow: hidden;
+}

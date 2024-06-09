@@ -4,7 +4,7 @@
     height: 400px;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: calc(100% + 250px);
     transform: translate(-50%, -75%);
     background-color: #d2e3eb;
     border-radius: 0 0 10px 10px;
@@ -35,11 +35,22 @@
     background-image: url("../../assets/monkey.png");
     position: absolute;
     top: calc(50% - 150px);
-    left: 50%;
+    left: calc(100% + 250px);
     z-index: 0;
     transform: translate(-50%, -75%);
     background-color: #d2e3eb;
     border-radius: 10px 10px 0 0;
+}
+
+.backArrow{
+    z-index: 20;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-image: url("https://www.freeiconspng.com/thumbs/arrow-icon/right-arrow-icon-27.png");
+    background-size: contain;
 }
 
 .leftArm,
@@ -96,7 +107,6 @@
     left: 0;
     transform: rotate(0deg);
 }
-
 
 .divider {
     width: 100%;
@@ -187,4 +197,21 @@ input {
     100% {
         transform: translate(-50%, -75%) rotateY(0deg);
     }
+}
+
+.appear{
+    animation: appearAnimation 1s ease-in-out forwards;
+}
+
+@keyframes appearAnimation {
+    100% { left: 50%; }
+}
+
+.hide{
+    animation: hideAnimation 1s ease-in-out forwards;
+}
+
+@keyframes hideAnimation {
+    0% { left: 50%; }
+    100% { left: calc(100% + 250px); }
 }
